@@ -1,0 +1,8 @@
+def arr(ar):
+    sum=0
+    print("Sum of array is ",end="")
+    for val in ar:
+        sum=sum+val
+        print(" ",sum ,end="")
+ar=[1,2,3,4,5]
+arr(ar)
