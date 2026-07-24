@@ -1,0 +1,43 @@
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+a=node(5)
+b=node(3)
+c=node(7)
+newend=node(9)
+newbeg=node(8)
+newmid=node(10)
+def printlink(head):
+    current=head
+    while(current!=None):
+        print("",current.data,"-->",end="")
+        current=current.next  
+    print(" None")
+head=a
+a.next=b
+b.next=c
+c.next=None
+printlink(head)
+
+# c.next=newend
+newbeg.next=head
+head=newbeg
+printlink(head)
+
+current=head
+k=2
+for val in range(k-1):
+    current=current.next
+newmid.next=current.next
+current.next=newmid
+printlink(head)
+
+current=head
+while(current.next!=None):
+    current=current.next
+current.next=newend
+printlink(head)
+
+
+    
