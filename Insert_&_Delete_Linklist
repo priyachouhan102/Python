@@ -1,0 +1,62 @@
+#add number in beg, mid and end in linklist
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+a=node(1)
+b=node(2)
+c=node(3)
+a.next=b
+b.next=c
+c.next=None
+head=a
+def printlink(head):
+    current=head
+    while current!=None:
+        print("",current.data,"-->",end="")
+        current=current.next
+    print(" None")
+printlink(head)
+newbeg=node(4)
+newbeg.next=head
+head=newbeg
+printlink(head)
+k=2 #index of value that you want to insert in linklist
+newmid=node(5)
+current=head
+for val in range(k-1):
+    current=current.next
+newmid.next=current.next
+current.next=newmid
+printlink(head)
+
+newend=node(6)
+newend.next=None
+current=head
+while current.next!=None:
+    current=current.next
+current.next=newend
+printlink(head)
+#deletion of newbeg
+head=head.next
+printlink(head)
+
+#deletion at end
+current=head
+while current.next.next!=None:
+    current=current.next
+current.next=None
+printlink(head)
+
+# deletion newmid
+k=2
+current=head
+for val in range(k-1):
+    current=current.next
+current.next=current.next.next
+# current.next.next
+printlink(head)
+
+
+
+
